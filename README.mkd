@@ -1,4 +1,12 @@
 
+Generate Emoticons.
+
+    ヽ|･ิ･ิ◡|ノ
+
+    |　´`o|o彡ﾟ 
+
+    (∩ﾟﾟω)  
+
 Install
 =======
 copy vimlib/plugin/emoticon.vim to your ~/.vim/plugin/

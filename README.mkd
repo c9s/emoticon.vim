@@ -1,4 +1,16 @@
 
+Install
+=======
+copy vimlib/plugin/emoticon.vim to your ~/.vim/plugin/
+
+or if you have VIM::Pacakger installed:
+
+    $ vim-packager build
+    $ make install
+
+then you can uninstall (only for vim-pacakger)
+
+    $ make uninstall
 
 Command
 =======

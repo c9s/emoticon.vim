@@ -1,0 +1,14 @@
+# VIM::Packager META file
+# see: http://search.cpan.org/dist/VIM-Packager/
+
+=name           emoticon.vim
+
+=author         Cornelius
+
+=email          cornelius.howl@gmail.com
+
+=type           plugin
+
+=version_from   vimlib/plugin/emoticon.vim
+
+=vim_version    >= 7.2

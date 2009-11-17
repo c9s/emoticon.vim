@@ -56,8 +56,13 @@ fun! s:generate()
     return join( text , "" )
 endf
 
-fun! s:newemoticon()
+fun! s:newEmoticon()
   echo s:generate()
 endf
 
-com! NewEmoticon :cal s:newemoticon()
+fun! s:appendEmoticon()
+  cal append(line('.'), s:generate() )
+endf
+
+com! NewEmoticon :cal s:newEmoticon()
+com! AppendEmoticon :cal s:appendEmoticon()

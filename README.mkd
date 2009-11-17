@@ -7,6 +7,11 @@ Generate Emoticons.
 
     (∩ﾟﾟω)  
 
+Screenshot
+==========
+
+![](http://cloud.github.com/downloads/c9s/emoticon.vim/Screen_shot_2009-11-17_at_9.07.43_PM.png)
+
 Install
 =======
 copy vimlib/plugin/emoticon.vim to your ~/.vim/plugin/

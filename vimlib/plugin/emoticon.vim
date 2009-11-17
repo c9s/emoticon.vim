@@ -10,7 +10,7 @@
 
 fun! s:randselect(list)
   let s = len( a:list )
-  let t = str2nr( localtime() ) % s
+  let t = str2nr( localtime() ) * 7 % s
   return a:list[t]
 endf
 

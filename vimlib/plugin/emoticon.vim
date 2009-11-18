@@ -12,7 +12,8 @@ scriptencoding utf8
 
 fun! s:randselect(list)
   let s = len( a:list )
-  let t = str2nr( localtime() ) * 7 % s
+  let r = reltime()
+  let t = str2nr( r[1] ) % s
   return a:list[t]
 endf
 
@@ -72,6 +73,24 @@ fun! s:newEmoticonCB()
   endif
 endf
 
+fun! s:gen_key(i)
+  let key = ""
+  let k = a:i
+  while k > 0
+    let key = nr2char( k % 26 + 97 ) . key
+    let k = float2nr(k / 26)
+  endwhile
+  return key
+endf
+
+fun! CompleteEmoticon(s,base)
+  for i in range(1,200)
+    let key = s:gen_key(i)
+    cal complete_add( { 'word': s:generate() , 'menu': key } )
+  endfor
+endf
+
 com! NewEmoticon :cal s:newEmoticon()
 com! NewEmoticonCB  :cal s:newEmoticonCB()
 com! AppendEmoticon :cal s:appendEmoticon()
+com! EnableEmoticonOmni :setlocal omnifunc=CompleteEmoticon

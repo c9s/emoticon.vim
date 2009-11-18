@@ -84,10 +84,20 @@ fun! s:gen_key(i)
 endf
 
 fun! CompleteEmoticon(s,base)
-  for i in range(1,200)
-    let key = s:gen_key(i)
-    cal complete_add( { 'word': s:generate() , 'menu': key } )
-  endfor
+  if a:s 
+    " locate the start of the word
+    let line = getline('.')
+    let start = col('.') - 1
+    while start > 0 && line[start - 1] =~ '\a'
+      let start -= 1
+    endwhile
+    return start
+  else
+    for i in range(1,200)
+      let key = s:gen_key(i)
+      cal complete_add( { 'word': s:generate() , 'menu': key } )
+    endfor
+  endif
 endf
 
 com! NewEmoticon :cal s:newEmoticon()

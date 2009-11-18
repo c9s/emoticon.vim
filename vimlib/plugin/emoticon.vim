@@ -64,5 +64,14 @@ fun! s:appendEmoticon()
   cal append(line('.'), s:generate() )
 endf
 
+fun! s:newEmoticonCB()
+  if has('clipboard')
+    cal setreg('*', s:generate() )
+  else
+    echomsg "You dont have clipboard supported"
+  endif
+endf
+
 com! NewEmoticon :cal s:newEmoticon()
+com! NewEmoticonCB  :cal s:newEmoticonCB()
 com! AppendEmoticon :cal s:appendEmoticon()
